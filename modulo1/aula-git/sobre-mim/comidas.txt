@@ -1,0 +1,4 @@
+Comidas:
+1 - Macarrão
+2 - Hambúrguer 
+3 - Batata frita
