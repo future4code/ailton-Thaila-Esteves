@@ -1,0 +1,2 @@
+# Aprendizados da semana de git
+Nessa primeira semana da Labenu aprendemos um pouco mais sobre como mexer nas ferrramentos que utilizamos no curso para nos comunicar com os intrutores e também para fazer os projetos. O **principal** conteúdo que aprendemos essa semana foi sobre git e github.
