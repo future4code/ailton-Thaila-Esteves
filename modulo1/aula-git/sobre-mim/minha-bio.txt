@@ -1,0 +1,3 @@
+Biografia para aula de git:
+Eu me chamo Thaila e sou de São Paulo. Considero que a programação é de extrema importância para as
+empresas atualmente.
