@@ -97,17 +97,19 @@ function retornaUltimoElemento(array) {
 
 // EXERCÍCIO 11
 
-function trocaPrimeiroEUltimo(array) {
-  // implemente sua lógica aqui
-  let primeiro = array[0]
-  let primeiro1 = primeiro
-  let tamanho = array.length
-  let ultimoPos = (tamanho) - 1
-  primeiro = array[ultimoPos]
-  let ultimo = primeiro1
-  console.log(array)
-  return array
-}
+// function trocaPrimeiroEUltimo(array) {
+//   // implemente sua lógica aqui
+//   let primeiro = array[0]
+//   let tamanho = array.length
+//   let ultimoPos = (tamanho) - 1
+//   let ultimo = array[ultimoPos]
+//   let primeiroValor
+//   primeiroValor = primeiro
+//   primeiro = ultimo
+//   ultimo = primeiroValor
+//   console.log(array)
+//   return array
+// }
 
 // EXERCÍCIO 12
 function checaIgualdadeDesconsiderandoCase(string1, string2) {
@@ -119,28 +121,41 @@ function checaIgualdadeDesconsiderandoCase(string1, string2) {
 }
 
 // EXERCÍCIO 13
-function checaRenovacaoRG() {
-  // implemente sua lógica aqui
-  const ano = Number(prompt("Digite o ano atual: "))
-  const anoNascimento = Number(prompt("Qual seu ano de nascimento? "))
-  const anoRG = Number(prompt("Em que ano sua carteira de identidade foi emitida? "))
-  const idade = ano - anoNascimento // 15
-  const carteira = ano - anoRG // 4 anos
-  const criterioUm = (idade <= 20) && (carteira >= 5)
-  const criteiroDois = (idade > 20 || idade <= 50) && (carteira >= 10)
-  const criteiroTres = (idade > 50) && (carteira >= 15)
-  const renova = criterioUm || criteiroDois || criteiroTres
-  console.log(renova)
-}
+// function checaRenovacaoRG() {
+//   // implemente sua lógica aqui
+//   const ano = Number(prompt("Digite o ano atual: "))
+//   const anoNascimento = Number(prompt("Qual seu ano de nascimento? "))
+//   const anoRG = Number(prompt("Em que ano sua carteira de identidade foi emitida? "))
+//   const idade = ano - anoNascimento
+//   const carteira = ano - anoRG 
+//   const criterioUm = (idade <= 20) && (carteira >= 5)
+//   const criteiroDois = (idade > 20 || idade <= 50) && (carteira >= 10)
+//   const criteiroTres = (idade > 50) && (carteira > 15)
+//   const renova = criterioUm || criteiroDois || criteiroTres
+//   console.log(renova)
+// }
 
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
-  // implemente sua lógica aqui
-
+//   // implemente sua lógica aqui
+  const anoAtual = Number(prompt("Digite um ano:"))
+  const multiplos400 = (anoAtual % 400) 
+  const multi400 = multiplos400 === 0
+  const multiplos4 = (anoAtual % 4)
+  const multi4 = multiplos4 === 0
+  const multiplos100 = (anoAtual % 100) === 0 
+  const multiplosNaoAceitos = multiplos100 && multiplos400
+  const multiplosValidos = multiplos4 - (multiplosNaoAceitos)
+  const bissexto = multi400 || multiplosValidos
+  return bissexto
 }
 
-// EXERCÍCIO 15
-function checaValidadeInscricaoLabenu() {
-  // implemente sua lógica aqui
-
-}
+// // EXERCÍCIO 15
+// function checaValidadeInscricaoLabenu() {
+//   // implemente sua lógica aqui
+//   const idade = prompt("Você tem mais de 18 anos?")
+//   const ensino = prompt("Você possui ensino médio completo?")
+//   const horario = prompt("Você possui disponibilidade exclusiva durante os horários do curso?")
+//   const comparar = idade === ensino === horario
+//   console.log(comparar)
+// }
