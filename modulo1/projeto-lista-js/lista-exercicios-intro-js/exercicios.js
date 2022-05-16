@@ -120,25 +120,24 @@ function checaIgualdadeDesconsiderandoCase(string1, string2) {
   return stringsIguais
 }
 
-// EXERCÍCIO 13
-// function checaRenovacaoRG() {
-//   // implemente sua lógica aqui
-//   const ano = Number(prompt("Digite o ano atual: "))
-//   const anoNascimento = Number(prompt("Qual seu ano de nascimento? "))
-//   const anoRG = Number(prompt("Em que ano sua carteira de identidade foi emitida? "))
-//   const idade = ano - anoNascimento
-//   const carteira = ano - anoRG 
-//   const criterioUm = (idade <= 20) && (carteira >= 5)
-//   const criteiroDois = (idade > 20 || idade <= 50) && (carteira >= 10)
-//   const criteiroTres = (idade > 50) && (carteira > 15)
-//   const renova = criterioUm || criteiroDois || criteiroTres
-//   console.log(renova)
-// }
+EXERCÍCIO 13
+function checaRenovacaoRG() {
+  // implemente sua lógica aqui
+  const ano = Number(prompt("Digite o ano atual: "))
+  const anoNascimento = Number(prompt("Qual seu ano de nascimento? "))
+  const anoRG = Number(prompt("Em que ano sua carteira de identidade foi emitida? "))
+  const idade = ano - anoNascimento
+  const carteira = ano - anoRG 
+  const criterioUm = (idade <= 20) && (carteira >= 5)
+  const criteiroDois = (idade > 20 && idade <= 50) && (carteira >= 10)
+  const criteiroTres = (idade > 50) && (carteira >= 15)
+  const renova = criterioUm || criteiroDois || criteiroTres
+  console.log(renova)
+}
 
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
 //   // implemente sua lógica aqui
-  const anoAtual = Number(prompt("Digite um ano:"))
   const multiplos400 = (anoAtual % 400) 
   const multi400 = multiplos400 === 0
   const multiplos4 = (anoAtual % 4)
