@@ -41,121 +41,86 @@
 // 2
 
 // a
-// function imprime (arrayOriginal) {
-//     for (i = 0; i < array.length; i++) {
-//         console.log(array[i])
-//     }
-// }
-// imprime(array)
+function imprime (arrayOriginal) {
+    for (i = 0; i < array.length; i++) {
+        console.log(array[i])
+    }
+}
+imprime(array)
 
 // b
-// function imprime (arrayOriginal) {
-//     for (i = 0; i < array.length; i++) {
-//         console.log(array[i] / 10)
-//     }
-// }
-// imprime(array)
+function imprime (arrayOriginal) {
+    for (i = 0; i < array.length; i++) {
+        console.log(array[i] / 10)
+    }
+}
+imprime(array)
 
 // c 
-// let novaArray = []
-// function imprime (arrayOriginal) {
-//     for (i = 0; i < array.length; i++) {
-//         if (array[i] % 2 === 0) {
-//             novaArray.push(array[i])
-//         }
-//     }
-//     console.log(novaArray)
-// }
-// imprime(array)
+let novaArray = []
+function imprime (arrayOriginal) {
+    for (i = 0; i < array.length; i++) {
+        if (array[i] % 2 === 0) {
+            novaArray.push(array[i])
+        }
+    }
+    console.log(novaArray)
+}
+imprime(array)
 
 // d
-// let outraArrayStrings = []
-// function imprime (arrayOriginal) {
-//     for (i = 0; i < array.length; i++) {
-//         let novoString = array[i].toString()
-//         outraArrayStrings.push(`O elemento do index ${i} é: ${novoString}`)
-//     }
-//     console.log(outraArrayStrings)
-// }
+let outraArrayStrings = []
+function imprime (arrayOriginal) {
+    for (i = 0; i < array.length; i++) {
+        let novoString = array[i].toString()
+        outraArrayStrings.push(`O elemento do index ${i} é: ${novoString}`)
+    }
+    console.log(outraArrayStrings)
+}
 
-// imprime(array)
+imprime(array)
 
 // e
-// function imprime (arrayOriginal) {
-//     let maior = 0
-//     let menor = 0
-//     for (i = 0; i < array.length; i++) {
-//         const elemento = array[i]
+function imprime (arrayOriginal) {
+    let maior = 0
+    let menor = 0
+    for (i = 0; i < array.length; i++) {
+        const elemento = array[i]
 
-//         if (elemento > maior) {
-//             maior = elemento
-//         } else if (elemento < menor) {
-//             menor = elemento
-//         }
+        if (elemento > maior) {
+            maior = elemento
+        } else if (elemento < menor) {
+            menor = elemento
+        }
         
-//     }
-//     console.log(`O maior número é ${maior} e o menor é ${menor}`)
+    }
+    console.log(`O maior número é ${maior} e o menor é ${menor}`)
 
-// }
-// imprime(array)
+}
+imprime(array)
 
 // DESAFIOS
 // 1
-const numeroJogador1 = Number(prompt("O primeiro jogador deve inserir o número que está pensando: "))
-console.log("Vamos jogar!")
-let chutesJogador2 = Number(prompt("O segundo jogador deve chutar o número que acha que o primeiro jogador escolheu: "))
+// const numeroJogador1 = Number(prompt("O primeiro jogador deve inserir o número que está pensando: "))
+// console.log("Vamos jogar!")
+// let chutesJogador2 = Number(prompt("O segundo jogador deve chutar o número que acha que o primeiro jogador escolheu: "))
 
 
-    for (chutesJogador2; chutesJogador2 !== numeroJogador1; chutesJogador2 += 0) {
+//     for (chutesJogador2; chutesJogador2 !== numeroJogador1; chutesJogador2 += 0) {
 
-        console.log(`O número chutado foi: ${chutesJogador2}`)
+//         console.log(`O número chutado foi: ${chutesJogador2}`)
 
-        if (chutesJogador2 < numeroJogador1) {
-            console.log(`Errou. O número escolhido é menor`)
-        } else if (chutesJogador2 > numeroJogador1) {
-            console.log(`Errou. O número escolhido é maior`)
-        } 
-    }
+//         if (chutesJogador2 < numeroJogador1) {
+//             console.log(`Errou. O número escolhido é menor`)
+//         } else if (chutesJogador2 > numeroJogador1) {
+//             console.log(`Errou. O número escolhido é maior`)
+//         } 
+//     }
 
-    if (chutesJogador2 === numeroJogador1) {
-        console.log(`Acertou`)
-        console.log(`O número de tentativas foi: `)
-    }
+//     if (chutesJogador2 === numeroJogador1) {
+//         console.log(`Acertou`)
+//         console.log(`O número de tentativas foi: `)
+//     }
 
 
 // jogo()
-
-
-
-// WHILE
-
-// let i = 0
-
-// while (i < lista.length) {
-//     const numero = lista[i]
-
-//     if (numero > 18) {
-//         console.log(numero)
-
-//     }
-//     i++
-// }
-
-// FOR
-
-// for (i=0; i < lista.length; i++) {
-//     const numero = lista[i]
-    
-//     if (numero > 18) {
-//                 console.log(numero)
-        
-//     }
-// }
-
-// FOR... OF...
-
-// for (let numero of lista) {
-//   if (numero > 18) {
-// 		console.log(numero)
-// 	}
-// }
