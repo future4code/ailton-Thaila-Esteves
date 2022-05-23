@@ -29,7 +29,12 @@ function retornaNumerosPares(array) {
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
-   
+    let novaArrayElevados = []
+    for (let numero of array) {
+        if (numero % 2 === 0)
+            novaArrayElevados.push(numero ** 2)
+    }
+    return novaArrayElevados
     }
 
 // EXERCÍCIO 06
