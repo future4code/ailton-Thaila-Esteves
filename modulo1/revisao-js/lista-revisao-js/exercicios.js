@@ -22,12 +22,14 @@ function retornaArrayOrdenado(array) {
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-  
+    return array.filter(function(x) {
+        return x % 2 === 0
+    })
 }
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
-    
+   
     }
 
 // EXERCÍCIO 06
