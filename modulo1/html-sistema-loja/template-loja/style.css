@@ -1,32 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: rgb(233, 233, 209);
 }
 
 h1 {
-    display: inline;
     background-color: burlywood;
     color:brown;
+    text-align: center;
 }
 
 .complementos {
-    color: brown;
-    border: 1px dashed brown;
+    background-color: chocolate;
+    color: wheat;
+    margin-top: 4px;
+    margin-bottom: 8px;
 }
 
 .cor-link {
     background-color:bisque;
-    color:brown;
-    margin: 4px;
+    color: brown;
+    margin-left: 4px;
+    margin-top: 16px;
     border: 1px dotted brown;
 }
 
 .conteudo {
-    background-color: chocolate;
-    color:rgb(233, 233, 209);
-    margin: 16px;
+    color: chocolate;
+    margin-left: 16px;
     padding: 20px;
+    font-size: larger;
+    text-align: center;
+}
+
+div {
+    text-align: center;
 }
 
 img {
+    display: inline;
     color: brown;
+    width: 800px;
+    height: 500px;
+}
+
+#logos-rede {
+    width: 120px;
+    height: 40px;
+    margin-top: 16px;
 }

@@ -2,8 +2,13 @@ body {
     background-color: rgb(233, 233, 209);
 }
 
+table {
+    margin: 0 auto;
+    border: 1px solid chocolate;
+}
 
 tr {
+    text-align: center;
     background-color: burlywood;
     color: brown;
     margin: 0 0 8px 0;
@@ -11,8 +16,7 @@ tr {
 
 img {
     width: 100px;
-    height: 100px;
-    object-fit: fill;
+    height: 80px;
     color: brown;
   }
 
@@ -20,12 +24,12 @@ a {
     background-color:bisque;
     color:brown;
     margin: 4px;
-    border: 1px dotted brown;
+    border: 1px solid brown;
 }
 
 p {
-    color:brown;
-    border: 1px dashed brown;
+    background-color: chocolate;
+    color: wheat;
 }
 
 #entrada {
@@ -34,5 +38,18 @@ p {
 }
 
 h2 {
-    color:brown;
+    text-align: center;
+    color: brown;
+    background-color: burlywood;
+}
+
+#logos-rede {
+    width: 120px;
+    height: 40px;
+    margin-top: 16px;
+    border: 1px dashed burlywood;
+}
+
+div {
+    text-align: center;
 }
