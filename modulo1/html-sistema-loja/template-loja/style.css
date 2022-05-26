@@ -1,0 +1,32 @@
+body {
+    background-color: rgb(233, 233, 209);
+}
+
+h1 {
+    display: inline;
+    background-color: burlywood;
+    color:brown;
+}
+
+.complementos {
+    color: brown;
+    border: 1px dashed brown;
+}
+
+.cor-link {
+    background-color:bisque;
+    color:brown;
+    margin: 4px;
+    border: 1px dotted brown;
+}
+
+.conteudo {
+    background-color: chocolate;
+    color:rgb(233, 233, 209);
+    margin: 16px;
+    padding: 20px;
+}
+
+img {
+    color: brown;
+}

@@ -1,0 +1,36 @@
+body {
+    background-color: rgb(233, 233, 209);
+}
+
+a {
+    background-color:bisque;
+    color:brown;
+    margin: 4px;
+    border: 1px dotted brown;
+}
+
+p {
+    color:brown;
+    border: 1px dashed brown;
+}
+
+img {
+    color:brown;
+}
+
+#entrada {
+    background-color: chocolate;
+    color:rgb(233, 233, 209);
+}
+
+h2 {
+    color:brown;
+}
+
+form {
+    color:brown;
+}
+
+button {
+    color: brown;
+}
