@@ -115,6 +115,14 @@ td img {
     height: 50px;
 }
 
+td button:hover {
+    background-color: #f6d12b;
+}
+
+td button:active {
+    color: white;
+}
+
 td {
     text-align: center;
 }
