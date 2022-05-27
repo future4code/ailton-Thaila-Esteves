@@ -4,9 +4,11 @@
   *
   **/
 
+
 * {
     margin: 0;
     padding: 0;
+    
 }
 
 h2 {
@@ -98,6 +100,10 @@ div>p:first-child {
   *  ESTILOS COMPRAR 
   *
   **/
+
+body {
+    font-family: Roboto;
+}
 
 div:nth-child(2),
 div:last-child {
