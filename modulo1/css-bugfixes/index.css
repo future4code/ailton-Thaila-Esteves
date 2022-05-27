@@ -19,6 +19,11 @@ h2 {
 input {
     height: 20px;
     width: 500px;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom-color: #000;
+    border-bottom-width: 4px;
 }
 
 button:focus {
@@ -53,6 +58,7 @@ div>p:first-child {
 .container {
     height: 500px;
     text-align: center;
+    color: rgb(220, 113, 113);
 }
 
 .icone {
