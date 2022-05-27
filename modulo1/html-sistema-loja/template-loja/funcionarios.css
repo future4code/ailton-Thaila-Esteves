@@ -1,0 +1,46 @@
+body {
+    background-color: rgb(233, 233, 209);
+}
+
+a {
+    background-color:bisque;
+    color:brown;
+    margin: 4px;
+    border: 1px solid brown;
+}
+
+p {
+    background-color: chocolate;
+    color: wheat;
+}
+
+img {
+    color: brown;
+}
+
+#entrada {
+    background-color: chocolate;
+    color:rgb(233, 233, 209);
+}
+
+h2 {
+    color:brown;
+    background-color: burlywood;
+}
+
+li {
+    background-color: burlywood;
+    color: brown;
+    margin: 8px;
+}
+
+#logos-rede {
+    width: 120px;
+    height: 40px;
+    margin-top: 16px;
+    border: 1px dashed burlywood;
+}
+
+div {
+    text-align: center;
+}

@@ -1,0 +1,57 @@
+body {
+    background-color: rgb(233, 233, 209);
+}
+
+a {
+    background-color:bisque;
+    color:brown;
+    margin: 4px;
+    border: 1px solid brown;
+}
+
+p {
+    background-color: chocolate;
+    color: wheat;
+}
+
+img {
+    color:brown;
+}
+
+#entrada {
+    background-color: chocolate;
+    color: wheat;
+}
+
+h2 {
+    text-align: center;
+    color:brown;
+    background-color: burlywood;
+}
+
+form {
+    text-align: center;
+    color:brown;
+    border: 1px solid chocolate;
+}
+
+label {
+    background-color: burlywood;
+}
+
+button {
+    color: brown;
+    background-color: white;
+    border: 1px solid chocolate;
+}
+
+#logos-rede {
+    width: 120px;
+    height: 40px;
+    margin-top: 16px;
+    border: 1px dashed burlywood;
+}
+
+div {
+    text-align: center;
+}
