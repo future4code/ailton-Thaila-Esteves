@@ -12,20 +12,26 @@
     padding-bottom: 12px;
 }
 
-.about-me {
-    text-align: right;
-    border: 2px solid palevioletred;
+.blackjack {
+    text-align: left;
+    border: 2px solid rgb(112, 216, 169);
     padding: 4px;
     margin: 4px;
 }
 
 .margens {
+    text-align: center;
     margin-top: 8px;
     margin-bottom: 16px;
-    margin-left: 32px;
+    margin-left: 540px;
     padding: 8px;
-    border: 2px solid palevioletred;
-    width: 160px;
+    border: 2px solid rgb(112, 216, 169);
+    width: 80px;
+}
+
+.editar-texto-blackjack {
+    margin: 4px;
+    padding-left: 24px;
 }
 
 .form-um {
@@ -41,22 +47,30 @@
 }
 
 .destacar {
-    background-color: palevioletred;
+    background-color: pink;
     padding: 8px;
+    font-size: large;
 }
 
 #logo {
     font-size: x-large;
-    padding: 24px;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    margin-left: 585px;
+    padding: 8px;
+    border: 3px solid rgb(112, 216, 169);
+    border-radius: 50px;
+    width: 4vw;
 }
 
 #ola {
     margin-top: 8px;
-    padding-top: 32px;
+    padding-top: 60px;
 }
 
 #texto-um {
-    padding-bottom: 32px;
+    padding-bottom: 60px;
 }
 
 div > a {
@@ -83,7 +97,11 @@ table {
 
 td, th {
     padding: 10px;
-    border: 2px solid rgb(233, 148, 162);
+    border: 2px solid rgb(112, 216, 169);
+}
+
+th {
+    background-color: rgb(112, 216, 169);
 }
 
 li {
@@ -91,28 +109,29 @@ li {
 }
 
 form {
-    border: 2px solid green;
-    background-color: pink;
+    border: 2px solid palevioletred;
+    background-color: rgb(112, 216, 169);
     margin-left: 20px;
     margin-bottom: 20px;
     width: 800px;
 }
 
 h3 {
+    font-size: x-large;
     margin-top: 16px;
     margin-bottom: 12px;
     margin-left: 32px;
 }
 
 input:hover {
-    background-color: rgb(242, 196, 204);
+    background-color: rgb(245, 222, 226);
 }
 
 button:hover {
-    background-color: palevioletred;
+    color:palevioletred;
 }
 
 button:active {
-    color:pink;
+    color:rgb(112, 216, 169);
     background-color: palevioletred;
 }
