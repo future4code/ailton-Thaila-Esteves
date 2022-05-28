@@ -11,30 +11,30 @@
  * 
  */
 
-console.log("Boas vindas ao jogo de Blackjack!")
+// console.log("Boas vindas ao jogo de Blackjack!")
 
-let arrayUsuario = []
+// let arrayUsuario = []
     
-let arrayComputador = []
+// let arrayComputador = []
     
-if (confirm("Quer iniciar uma nova rodada?")) {
+// if (confirm("Quer iniciar uma nova rodada?")) {
        
-   let usuarioNumUm = comprarCarta()
-   arrayUsuario.push(usuarioNumUm)
-   let pontosUsuario = usuarioNumUm.valor
+//    let usuarioNumUm = comprarCarta()
+//    arrayUsuario.push(usuarioNumUm)
+//    let pontosUsuario = usuarioNumUm.valor
     
-   let usuarioNumDois = comprarCarta()
-   arrayUsuario.push(usuarioNumDois)
-   pontosUsuario += usuarioNumDois.valor
+//    let usuarioNumDois = comprarCarta()
+//    arrayUsuario.push(usuarioNumDois)
+//    pontosUsuario += usuarioNumDois.valor
     
 
-   let computadorNumUm = comprarCarta()
-   arrayComputador.push(computadorNumUm)
-   let pontosComputador = computadorNumUm.valor
+//    let computadorNumUm = comprarCarta()
+//    arrayComputador.push(computadorNumUm)
+//    let pontosComputador = computadorNumUm.valor
     
-   let computadorNumDois = comprarCarta()
-   arrayUsuario.push(computadorNumDois)
-   pontosComputador += computadorNumDois.valor
+//    let computadorNumDois = comprarCarta()
+//    arrayUsuario.push(computadorNumDois)
+//    pontosComputador += computadorNumDois.valor
 
    // desafio 8
 
@@ -86,5 +86,5 @@ if (confirm("Quer iniciar uma nova rodada?")) {
 //    }
 // } else {
 //       console.log("O jogo acabou")
-}
+// }
     
