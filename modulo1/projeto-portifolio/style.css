@@ -5,6 +5,27 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+#logo {
+    font-size: x-large;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    margin-left: 585px;
+    padding: 8px;
+    border: 3px solid rgb(112, 216, 169);
+    border-radius: 50px;
+    width: 4vw;
+}
+
+#ola {
+    margin-top: 8px;
+    padding-top: 60px;
+}
+
+#texto-um {
+    padding-bottom: 60px;
+}
+
 .parte-um {
     text-align: center;
     padding-top: 12px;
@@ -61,27 +82,6 @@
     padding: 16px;
     background-color: rgb(244, 177, 188);
     padding-left: 32px;
-}
-
-#logo {
-    font-size: x-large;
-    text-align: center;
-    margin-top: 8px;
-    margin-bottom: 16px;
-    margin-left: 585px;
-    padding: 8px;
-    border: 3px solid rgb(112, 216, 169);
-    border-radius: 50px;
-    width: 4vw;
-}
-
-#ola {
-    margin-top: 8px;
-    padding-top: 60px;
-}
-
-#texto-um {
-    padding-bottom: 60px;
 }
 
 div > a {
