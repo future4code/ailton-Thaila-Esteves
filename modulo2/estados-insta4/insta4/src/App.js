@@ -33,7 +33,7 @@ class App extends React.Component {
 
   render() {
 
-    const listaComponentes = this.state.posts.map((box) => {
+    const listaComponentes = [this.state.posts.map((box) => {
       return (
         <div>
         {box.nomeUsuario}
