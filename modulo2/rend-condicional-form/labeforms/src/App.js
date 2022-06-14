@@ -37,6 +37,8 @@ class App extends Component {
       case 4:
           return <Extra />;
           break;
+      default:
+        return <Extra />
       
     }
   };
