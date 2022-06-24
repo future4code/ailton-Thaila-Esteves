@@ -23,7 +23,7 @@ class App extends React.Component {
       tarefas: [
         {
           id: Date.now(), // Explicação abaixo
-          texto: 'Texto da tarefa',
+          texto: 'Texto da primeira tarefa',
           completa: false // Indica se a tarefa está completa (true ou false)
         },
         {
@@ -45,11 +45,13 @@ class App extends React.Component {
   };
 
   onChangeInput = (event) => {
-
+    return this.setState({inputValue: event.target.value})
   }
 
   criaTarefa = () => {
-
+    const guardaTarefa = this.state.inputValue
+    const novaArray = [...this.state.tarefas, guardaTarefa]
+  
   }
 
   selectTarefa = (id) => {
@@ -83,7 +85,7 @@ class App extends React.Component {
 
         <InputsContainer>
           <label>Filtro</label>
-          <select value={this.state.filter} onChange={this.onChangeFilter}>
+          <select value={this.state.filtro} onChange={this.onChangeFilter}>
             <option value="">Nenhum</option>
             <option value="pendentes">Pendentes</option>
             <option value="completas">Completas</option>
