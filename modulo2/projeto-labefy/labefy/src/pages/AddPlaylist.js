@@ -3,11 +3,11 @@ import axios from "axios";
 import styled from "styled-components";
 
 const EstiloInput = styled.input`
-    width: 12rem;
+    width: 18rem;
     border: 1px solid orangered;
 `
 
-export default class AddPlaylist extends React.Component {
+class AddPlaylist extends React.Component {
     state = {
         playlistInput: ""
     }
@@ -21,10 +21,12 @@ export default class AddPlaylist extends React.Component {
                 Authorization: "thaila-esteves-ailton"
             }
           }
-        ).then(() => {
-            alert("Playlist adicionada!")
-        }).catch((err) => {
-            console.log(err.message)
+        ).then((res) => {
+                   
+            alert("Playlist criada e adicionada a sua lista de playlist!")
+            this.setState({playlistInput: ""}) 
+        }).catch(() => {
+            alert("Uma playlist com esse nome já foi adicionada, por favor escolha outro nome")
         })
     }
 
@@ -37,12 +39,16 @@ export default class AddPlaylist extends React.Component {
       <div>
         <h1>Adicione uma nova playlist</h1>
         <EstiloInput
-            placeholder="escreva o nome da sua nova playlist"
+            placeholder="Escreva o nome que quer colocar na sua nova playlist"
             value={this.state.playlistInput}
             onChange={this.onChangePlaylist}
         />
         <button onClick={this.addToPlaylist}>Adicionar</button>
+        <hr />
+        <button onClick={this.props.goToList}>Ver todas suas playlist</button>
       </div>
     )
   }
 }
+
+export default AddPlaylist
