@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#logo {
+    font-size: x-large;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    margin-left: 585px;
+    padding: 8px;
+    border: 3px solid rgb(112, 216, 169);
+    border-radius: 50px;
+    width: 4vw;
+}
+
+#ola {
+    margin-top: 8px;
+    padding-top: 60px;
+}
+
+#texto-um {
+    padding-bottom: 60px;
+}
+
+.parte-um {
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.blackj {
+    text-align: center;
+}
+
+.blackjack {
+    text-align: left;
+    border: 2px solid rgb(112, 216, 169);
+    padding: 4px;
+    margin: 4px;
+}
+
+.margens {
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    margin-left: 540px;
+    padding: 8px;
+    border: 2px solid rgb(112, 216, 169);
+    width: 80px;
+}
+
+.tec {
+    padding: 8px;
+
+}
+
+.form-um {
+    margin: 15px;
+}
+
+.form-um:last-of-type {
+    text-align: center;
+}
+
+.form-um > input {
+    height: 25px;
+}
+
+.destacar {
+    background-color: rgb(244, 177, 188);
+    padding: 8px;
+    font-size: large;
+}
+
+.tecnologias {
+    margin-top: 12px;
+    margin-bottom: 32px;
+    padding: 16px;
+    background-color: rgb(244, 177, 188);
+    padding-left: 32px;
+}
+
+div > a {
+    text-align: center;
+    color: palevioletred;
+}
+
+div > p {
+    text-align: left;
+    padding-top: 16px;
+    padding-bottom: 32px;
+    padding-left: 16px;
+}
+
+p > a {
+    color: palevioletred;
+}
+
+body {
+    background-color: rgb(245, 222, 226);
+}
+
+table {
+    background: rgb(245, 222, 226);
+    text-align: center;
+    margin: 16px;
+}
+
+td, th {
+    padding: 10px;
+    border: 2px solid rgb(112, 216, 169);
+}
+
+th {
+    background-color: rgb(112, 216, 169);
+}
+
+form {
+    border: 2px solid palevioletred;
+    background-color: rgb(112, 216, 169);
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width: 800px;
+}
+
+h3 {
+    font-size: x-large;
+    margin-top: 16px;
+    margin-bottom: 12px;
+    margin-left: 32px;
+}
+
+input:hover {
+    background-color: rgb(245, 222, 226);
+}
+
+button:hover {
+    color:palevioletred;
+}
+
+button:active {
+    color:rgb(112, 216, 169);
+    background-color: palevioletred;
+}
+
+img {
+    display: inline;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    border: 4px solid palevioletred;
+    width: 45vw;
+    height: 45vh;
+}
+
+h2 {
+    text-align: rigth;
+    padding-top: 4px;
+    padding-bottom: 12px;
+}
+
