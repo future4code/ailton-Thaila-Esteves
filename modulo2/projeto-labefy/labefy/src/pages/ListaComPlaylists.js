@@ -42,9 +42,8 @@ class SeeAllPlaylist extends React.Component {
     const mapeandoPlaylist = this.state.listaTodasPlaylists.map((playlist) => {  
         return (
             <div key={playlist.id}>
-            <span onClick={() => this.props.mudarPagina("details", this.props.id)}>
+            <button onClick={() => this.props.mudarPagina("details", this.props.id)}>Ver detalhes</button>
             {playlist.name}
-            </span>
             <button onClick={() => this.deletarPlaylist(playlist.id)}>Deletar playlist</button>
             </div>
         )

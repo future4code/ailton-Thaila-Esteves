@@ -25,6 +25,7 @@ class SeeAllPlaylist extends React.Component {
     return (            
         <div>
             {mostraPagina()}
+            <button onClick={this.props.goToAdd}>Adicionar mais playlist</button>
         </div>
     )
   }

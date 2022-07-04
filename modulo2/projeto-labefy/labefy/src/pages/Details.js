@@ -22,7 +22,7 @@ class Details extends React.Component {
     }). then (response => {
       this.setState({playlistDetail: response.data.result.tracks})
   }).catch ((err) => {
-      alert(err.response)
+      alert(err)
   })
 }
 
