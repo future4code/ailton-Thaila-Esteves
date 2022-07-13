@@ -1,27 +1,16 @@
 import React from 'react'
-import styled from "styled-components"
-
-const CardLogin = styled.div`
-  border: 6px solid red;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`
+import { useNavigate } from "react-router-dom";
+import { goReturn, goToAdmin } from "../routes/coordinator";
 
 const LoginPage = () => {
+  const navigate = useNavigate()
+  
   return (
-    <CardLogin>
-      <h2>Faça seu login</h2>
-      <input 
-        placeholder={"E-mail"}
-      />
-      <input 
-        placeholder={"Senha"}
-      />
-      <button>Voltar</button>
-      <button>Entrar</button>
-    </CardLogin>
+    <div>
+      <div>Login</div>
+      <button onClick={() => goReturn(navigate)}>Voltar</button>
+      <button onClick={() => goToAdmin(navigate)}>Entrar</button>
+    </div>
   )
 }
 

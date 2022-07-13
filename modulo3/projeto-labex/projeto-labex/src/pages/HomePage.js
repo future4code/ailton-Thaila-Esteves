@@ -1,19 +1,16 @@
 import React from 'react'
-import styled from "styled-components"
-import img from "./images/astrona.png"
-
-const CardHome = styled.div`
-  border: 6px solid red;
-`
+import { useNavigate } from "react-router-dom";
+import { goToList, goToLogin } from "../routes/coordinator";
 
 const HomePage = () => {
+  const navigate = useNavigate()
   return (
-    <CardHome>
+    <div>
       <h1>LabeX</h1>
-      <button>Ver Viagens</button>
-      <button>Área Admin</button>
-      <img src={img} />
-    </CardHome>
+
+      <button onClick={() => goToList(navigate)}>Ver Viagens</button>
+      <button onClick={() => goToLogin(navigate)}>Área Admin</button>
+    </div>
   )
 }
 
