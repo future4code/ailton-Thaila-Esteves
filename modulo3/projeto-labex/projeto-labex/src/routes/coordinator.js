@@ -3,11 +3,11 @@ export const goToHomePage = (navigate) => {
 }
 
 export const goToList = (navigate) => {
-    navigate("/list")
+    navigate("/trips/list")
 }
 
 export const goToApplication = (navigate) => {
-    navigate("/application")
+    navigate("/trips/application")
 }
 
 export const goToLogin = (navigate) => {
@@ -15,15 +15,15 @@ export const goToLogin = (navigate) => {
 }
 
 export const goToAdmin = (navigate) => {
-    navigate("/admin")
+    navigate("/admin/trips/list")
 }
 
 export const goToCreate = (navigate) => {
-    navigate("/create")
+    navigate("/admin/trips/create")
 }
 
-export const goToDetails = (navigate) => {
-    navigate(`/details/`)
+export const goToDetails = (navigate, id) => {
+    navigate(`/admin/trips/${id}`)
 }
 
 export const goReturn = (navigate) => {
