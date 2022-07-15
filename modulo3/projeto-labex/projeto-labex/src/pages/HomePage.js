@@ -6,6 +6,7 @@ import astra from "../assets/astra.jpg"
 
 const AreaCadastro = styled.div`
     background-image: url(${astra});
+    background-color: #735812;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

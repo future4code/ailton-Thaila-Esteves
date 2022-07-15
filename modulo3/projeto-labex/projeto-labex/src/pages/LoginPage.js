@@ -17,8 +17,9 @@ const LoginPage = () => {
     setPassword(event.target.value)
   }
 
-  const onClickSubmit = () => {
-    console.log(email, password)
+  const onSubmitLogin = (event) => {
+    event.preventDefault()
+
     const body = {
       email: email,
       password: password
@@ -40,22 +41,25 @@ const LoginPage = () => {
   return (
     <div>
       <div>Login</div>
-      <input
-        placeholder='email'
-        type='email'
-        value={email}
-        onChange={onChangeEmail}
-      />
+      <form onSubmit={onSubmitLogin}>
+        <input
+          placeholder='email'
+          type='email'
+          value={email}
+          onChange={onChangeEmail}
+          required
+        />
 
-      <input
-        placeholder='password'
-        type='password'
-        value={password}
-        onChange={onChangePassword}
-      />
-
+        <input
+          placeholder='password'
+          type='password'
+          value={password}
+          onChange={onChangePassword}
+          required
+        />
+        <button>Enviar para login</button>
+      </form>
       <button onClick={() => goReturn(navigate)}>Voltar</button>
-      <button onClick={onClickSubmit}>Entrar</button>
     </div>
   )
 }

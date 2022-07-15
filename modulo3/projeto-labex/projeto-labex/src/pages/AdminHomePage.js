@@ -1,14 +1,13 @@
 import React from 'react'
 import { useRequestList } from '../hook/useRequestList';
-import { useRequestDelete } from '../hook/useRequestDelete';
 import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import { goReturn, goToCreate, goToDetails } from "../routes/coordinator";
 import { BASE_URL } from '../constants/urls';
 import styled from 'styled-components';
+import axios from 'axios';
 
-const Detalhes = styled.li`
-  cursor: pointer;
+const ClicaVerDetalhes = styled.div`
   border: 1px solid red;
   padding: 8px;
 `
@@ -32,14 +31,14 @@ const AdminHomePage = () => {
   const [trips, isLoading, error] = useRequestList(
     `${BASE_URL}/trips`
   )
-  // GRFcRDsRNxIKuvhJ4KmB
+ 
   const tripsList = trips && trips.map((trip) => {
-    return <Detalhes key={trip.id} onClick={() => goToDetails(navigate)}>
-      {trip.name}
+    return <ClicaVerDetalhes key={trip.id}>
+      <p onClick={() => goToDetails(navigate)}>{trip.name}</p> 
       <button>X</button>
-      </Detalhes>
+      </ClicaVerDetalhes>
   })
-  
+
   return (
     <div>
       <div>Área admin</div>

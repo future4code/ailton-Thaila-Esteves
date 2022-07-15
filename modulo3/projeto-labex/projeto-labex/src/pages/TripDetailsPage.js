@@ -2,25 +2,23 @@ import React from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from "react"
-import { goReturn, goToLogin } from "../routes/coordinator";
+import { goReturn } from "../routes/coordinator";
 import { BASE_URL } from '../constants/urls';
 
-
 const useProtectedPage = () => {
-  const navigate = useNavigate()
 
   useEffect(() => {
     const token = localStorage.getItem("token");
 
     if (token === null) {
       console.log("Não está logado!!!");
-      goToLogin(navigate)
     }
   }, []);
 };
 
 const TripDetailsPage = () => {
   useProtectedPage()
+
   const navigate = useNavigate()
 
   const [details, setDetails] = useState({});
@@ -31,7 +29,7 @@ const TripDetailsPage = () => {
     const token = localStorage.getItem("token");
 
     axios
-    .get( `${BASE_URL}/trip/GRFcRDsRNxIKuvhJ4KmB`, {
+    .get( `${BASE_URL}/trip/:id`, {
       headers: {
         auth: token
       }
