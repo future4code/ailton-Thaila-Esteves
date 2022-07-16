@@ -1,41 +1,20 @@
-import axios from 'axios';
-import React, { useState } from 'react'
+import React from 'react'
 import { useNavigate } from "react-router-dom";
-import { goReturn, goToAdmin } from "../routes/coordinator";
+import { fazerLogin } from '../hook/requests';
+import useForm from '../hook/useForm';
+import { goReturn } from "../routes/coordinator";
 
 const LoginPage = () => {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const { form, onChange } = useForm({
+    email: "",
+    password: ""
+  })
 
   const navigate = useNavigate()
-  
-  const onChangeEmail = (event) => {
-    setEmail(event.target.value)
-  }
-
-  const onChangePassword = (event) => {
-    setPassword(event.target.value)
-  }
 
   const onSubmitLogin = (event) => {
     event.preventDefault()
-
-    const body = {
-      email: email,
-      password: password
-    }
-    axios
-    .post(
-      'https://us-central1-labenu-apis.cloudfunctions.net/labeX/thaila-esteves-ailton/login', 
-      body
-      )
-      .then((response) => {
-        localStorage.setItem('token', response.data.token)
-        goToAdmin(navigate)
-      }) 
-      .catch((err) => {
-        console.log('Nop', err.response)
-      })
+    fazerLogin(form, navigate)
   }
 
   return (
@@ -43,21 +22,23 @@ const LoginPage = () => {
       <div>Login</div>
       <form onSubmit={onSubmitLogin}>
         <input
-          placeholder='email'
-          type='email'
-          value={email}
-          onChange={onChangeEmail}
+          placeholder={'email'}
+          type={'email'}
+          name={'email'}
+          value={form.email}
+          onChange={onChange}
           required
         />
 
         <input
-          placeholder='password'
-          type='password'
-          value={password}
-          onChange={onChangePassword}
+          placeholder={'senha'}
+          type={'password'}
+          name={'password'}
+          value={form.password}
+          onChange={onChange}
           required
         />
-        <button>Enviar para login</button>
+        <button type={'submit'}>Entrar</button>
       </form>
       <button onClick={() => goReturn(navigate)}>Voltar</button>
     </div>

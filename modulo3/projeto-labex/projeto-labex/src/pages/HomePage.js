@@ -6,7 +6,7 @@ import astra from "../assets/astra.jpg"
 
 const AreaCadastro = styled.div`
     background-image: url(${astra});
-    background-color: #735812;
+    background-color: #BFA08E;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -19,14 +19,25 @@ const AreaCadastro = styled.div`
 `
 
 const AreaCard = styled.div`
-    border: 1px solid white;
-    border-radius: 8px;
-    background-color: #f5eedc;
+    border: 3px solid #8C6849;
+    border-radius: 12px;
+    background-color: #BFA08E;
     margin-left: 250px;
-    margin-top: 150px;
-    height: 50vh;
+    margin-top: 100px;
+    height: 40vh;
     width: 20vw;
     padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+
+const Botoes = styled.button`
+    border-radius: 8px;
+    border: 4px solid #8C6849;
+    font-size: medium;
+    width: 8rem;
+    margin: 8px;
 `
 
 const HomePage = () => {
@@ -36,8 +47,8 @@ const HomePage = () => {
       <AreaCard>
         <h1>LabeX</h1>
 
-        <button onClick={() => goToList(navigate)}>Ver Viagens</button>
-        <button onClick={() => goToLogin(navigate)}>Área Admin</button>
+        <Botoes onClick={() => goToList(navigate)}>Ver Viagens</Botoes>
+        <Botoes onClick={() => goToLogin(navigate)}>Área Admin</Botoes>
       </AreaCard>
     </AreaCadastro>
   )

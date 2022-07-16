@@ -1,109 +1,81 @@
 import React from 'react'
-import { goReturn, goToLogin } from "../routes/coordinator";
+import { goReturn } from "../routes/coordinator";
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
-import { useState, useEffect } from "react"
-import { BASE_URL } from '../constants/urls';
-
-const useProtectedPage = () => {
-  const navigate = useNavigate()
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-
-    if (token === null) {
-      console.log("Não está logado!!!");
-      goToLogin(navigate)
-    }
-  }, []);
-};
+import useForm from '../hook/useForm';
+import useProtectedPage from '../hook/useProtectedPage';
+import { createNewTrip } from '../hook/requests';
 
 const CreateTripPage = () => {
   useProtectedPage()
   const navigate = useNavigate()
-  const [name, setName] = useState("")
-  const [planet, setPlanet] = useState("")
-  const [date, setDate] = useState("")
-  const [description, setDescription] = useState("")
-  const [duractionInDays, setDuractionInDays] = useState("")
-  const [create, setCreate] = useState({});
+ 
+  const { form, onChange, cleanFields} = useForm ({
+    name: "",
+    planet: "",
+    date: "",
+    description: "",
+    durationInDays: ""
+  })
 
-  const onChangeName = (event) => {
-    setName(event.target.value)
+  const onClickSubmit = (event) => {
+    event.preventDefault()
+    createNewTrip(form, cleanFields)
   }
+  
+  const today = new Date()
+    const stringToday = today.getFullYear() + "-" +
+    ("0" + (today.getMonth() + 1)).substr(-2) + "-"
+    + ("0" + today.getDate()).substr(-2)
 
-  const onChangePlanet = (event) => {
-    setPlanet(event.target.value)
-  }
-
-  const onChangeDate = (event) => {
-    setDate(event.target.value)
-  }
-
-  const onChangeDescription = (event) => {
-    setDescription(event.target.value)
-  }
-
-  const onChangeDurationInDays = (event) => {
-    setDuractionInDays(event.target.value)
-  }
-
-  const onClickSubmit = () => {
-    const token = localStorage.getItem("token");
-    const body = {
-      name: name,
-      planet: planet,
-      date: date,
-      description: description,
-      duractionInDays: duractionInDays
-    }
-
-    axios
-    .post( `${BASE_URL}/trips`, {
-      headers: {
-        auth: token
-      },
-      body
-    }
-    )
-    .then((res) => {
-      setCreate(res.data.trip);
-    })
-    .catch((err) => {
-      console.log(err.message)
-    })
-  }
-    
   return (
     <div>
-      <p>Formulário para o administrador criar uma nova viagem</p>
+      <h2>Crie uma nova viagem</h2>
+      <form onSubmit={onClickSubmit}>
       <input
         placeholder='name'
-        value={name}
-        onChange={onChangeName}
+        value={form.name}
+        onChange={onChange}
+        name={"name"}
+        required
       />
-      <input
-        placeholder='planet'
-        value={planet}
-        onChange={onChangePlanet}
+      <select
+        placeholder='Planeta'
+        name={'planet'}
+        defaultValue={""}
+        onChange={onChange}
+        required
+      >
+        <option value={''} disabled>Selecione um planeta</option>
+        <option>Marte</option>
+        <option>Venus</option>
+      </select>
+        <input
+        placeholder='Data'
+        type={'date'}
+        name={'date'}
+        value={form.date}
+        onChange={onChange}
+        required
+        min={stringToday}
       />
         <input
-        placeholder='date'
-        value={date}
-        onChange={onChangeDate}
+        placeholder='Descrição'
+        name='description'
+        value={form.description}
+        onChange={onChange}
+        required
       />
         <input
-        placeholder='description'
-        value={description}
-        onChange={onChangeDescription}
+        placeholder='Duração da viagem em dias'
+        type={'number'}
+        name={'duractionInDays'}
+        value={form.duractionInDays}
+        onChange={onChange}
+        min={50}
       />
-        <input
-        placeholder='duractionInDays'
-        value={duractionInDays}
-        onChange={onChangeDurationInDays}
-      />
+      <button type={'submit'}>CRIAR</button>
+      </form>
       <button onClick={() => goReturn(navigate)}>Voltar</button>
-      <button onClick={onClickSubmit}>CRIAR</button>
     </div>
   )
 }

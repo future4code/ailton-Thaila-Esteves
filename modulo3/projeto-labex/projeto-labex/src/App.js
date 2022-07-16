@@ -8,11 +8,23 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     width: 100vw;
     min-height: 100vh;
-    background-color: lightblue;
+    background-color: #BFA08E;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  button {
+    background-color: white;
+    border: 2px solid #8C6849;
+    border-radius: 12px;
+    width: 8rem;
+    height: 2rem;
+    margin: 4px;
+    :hover {
+      background-color: #8C6849;
+      color: white;
+    }
+  }
 `
 
 const App = () => {
