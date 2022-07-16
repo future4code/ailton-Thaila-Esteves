@@ -19,9 +19,9 @@ const AreaCadastro = styled.div`
 `
 
 const AreaCard = styled.div`
-    border: 3px solid #8C6849;
+    
     border-radius: 12px;
-    background-color: #BFA08E;
+    background-color: #8C704D;
     margin-left: 250px;
     margin-top: 100px;
     height: 40vh;
@@ -30,6 +30,7 @@ const AreaCard = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: white;
 `
 
 const Botoes = styled.button`

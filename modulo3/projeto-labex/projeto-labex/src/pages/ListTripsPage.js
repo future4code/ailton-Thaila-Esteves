@@ -10,14 +10,13 @@ const Nav = styled.div`
   justify-content: flex-start;
   align-items: center;
 `
+const Carregar = styled.p`
+  color: white;
+  font-size:large;
+`
 
 const AreaBotoes = styled.div`
-  margin-right: 60px;
-`
-const Title = styled.h2`
-  // display: flex;
-  // justify-content: flex-start;
-  
+  margin-left: 20px;
 `
 
 export default function ListTripsPage () {
@@ -31,13 +30,13 @@ export default function ListTripsPage () {
   return (
     <div>
       <Nav>
+        <h2>Lista de viagens</h2>
         <AreaBotoes>
         <button onClick={() => goReturn(navigate)}>Voltar</button>
         <button onClick={() => goToApplication(navigate)}>Inscreva-se</button>
         </AreaBotoes>
-        <Title>Lista de viagens</Title>
       </Nav>
-      {tripsList && tripsList.length > 0 ? tripsList : <p>Carregando...</p>}
+      {tripsList && tripsList.length > 0 ? tripsList : <Carregar>Carregando...</Carregar>}
     </div>
   )
 }

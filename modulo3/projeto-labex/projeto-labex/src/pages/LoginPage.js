@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from "react-router-dom";
 import { fazerLogin } from '../hook/requests';
 import useForm from '../hook/useForm';
-import { goReturn } from "../routes/coordinator";
+import { goToHomePage } from "../routes/coordinator";
 
 const LoginPage = () => {
   const { form, onChange } = useForm({
@@ -19,7 +19,7 @@ const LoginPage = () => {
 
   return (
     <div>
-      <div>Login</div>
+      <h2>Login</h2>
       <form onSubmit={onSubmitLogin}>
         <input
           placeholder={'email'}
@@ -40,7 +40,7 @@ const LoginPage = () => {
         />
         <button type={'submit'}>Entrar</button>
       </form>
-      <button onClick={() => goReturn(navigate)}>Voltar</button>
+      <button onClick={() => goToHomePage(navigate)}>Voltar</button>
     </div>
   )
 }

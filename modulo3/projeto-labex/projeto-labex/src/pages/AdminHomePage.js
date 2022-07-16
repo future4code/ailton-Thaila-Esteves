@@ -5,25 +5,31 @@ import { fazerLogout } from '../hook/requests';
 import { useNavigate } from "react-router-dom";
 import CardTripNames from '../components/CardTripNames';
 import { goReturn, goToCreate } from "../routes/coordinator";
+import styled from 'styled-components';
+
+const Carrega = styled.p`
+  color: white;
+  font-size:large;
+`
 
 const AdminHomePage = () => {
-  useProtectedPage();
+  useProtectedPage()
 
   const navigate = useNavigate()
 
-  const [allTrips, verTrips] = useRequestData("/trips", {})
+  const [tripsInfo, getTrips] = useRequestData("/trips", {})
   
-  const tripsList = allTrips.trips && allTrips.trips.map((trip) => {
-    return <CardTripNames key={trip.id} name={trip.name} verTrips={verTrips} />
+  const tripsList = tripsInfo.trips && tripsInfo.trips.map((trip) => {
+    return <CardTripNames key={trip.id} name={trip.name} id={trip.id} getTrips={getTrips} />
   })
 
   return (
     <div>
-      <div>Área admin</div>
+      <h2>Área admin</h2>
       <button onClick={() => goReturn(navigate)}>Voltar</button>
       <button onClick={() => goToCreate(navigate)}>Criar Viagem</button>
       <button onClick={() => fazerLogout(navigate)}>SAIR</button>
-      {tripsList && tripsList.length > 0 ? tripsList : <p>Carregando...</p>}
+      {tripsList && tripsList.length > 0 ? tripsList : <Carrega>Carregando...</Carrega>}
     </div>
   )
 }

@@ -6,20 +6,37 @@ import useForm from '../hook/useForm';
 import { useRequestData } from '../hook/useRequestData';
 import styled from 'styled-components';
 
-const CadastroEstilo = styled.form`
+const CadastroEstilo = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-contents: center;
+  align-items: center;
+`
+const FormularioEstilo = styled.form`
+display: flex;
+flex-direction: column;
+border: 2px solid #8C6849;
+margin: 8px;
+padding: 8px;
+font-size: medium;
+background-color: #BFA08E;
+justify-contents: center;
+align-items: center;
+`
+const Espaco = styled.input`
+  border: 2px solid #8C6849;
+  border-radius: 4px;
   width: 40rem;
-  height: 20rem;
+  padding: 8px;
+  margin: 4px;
 `
 
-const BotaoCentro = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  
+const Selecionar = styled.select`
+  border: 2px solid #8C6849;
+  border-radius: 4px;
+  width: 660px;
+  height: 34px;
+  margin: 8px;
 `
 
 const ApplicationFormPage = () => {
@@ -54,21 +71,22 @@ const ApplicationFormPage = () => {
   })
 
   return (
-    <div>
+    <CadastroEstilo>
       <h2>Faça seu cadastro</h2>
-      <CadastroEstilo onSubmit={fazerCadastro}>
-        <select defaultValue="" onChange={mudaTrip}>
+      <button onClick={() => goReturn(navigate)}>Voltar</button>
+      <FormularioEstilo onSubmit={fazerCadastro}>
+        <Selecionar defaultValue="" onChange={mudaTrip}>
           <option value="" disabled>Escolha a viagem desejada</option>
           {chooseTrip}
-        </select>
-        <input
+        </Selecionar>
+        <Espaco
           placeholder="Nome"
           name={"name"}
           value={form.name}
           onChange={onChange}
           required
         />
-        <input
+        <Espaco
           name={"age"}
           value={form.age}
           onChange={onChange}
@@ -77,21 +95,21 @@ const ApplicationFormPage = () => {
           type={"number"}
           min={18}
         />
-        <input
+        <Espaco
           name={"applicationText"}
           value={form.applicationText}
           onChange={onChange}
           placeholder="Texto com sua incrição"
           required
         />
-        <input
+        <Espaco
           name={"profession"}
           value={form.profession}
           onChange={onChange}
           placeholder="Profissão"
           required
         />
-        <select
+        <Selecionar
           placeholder="País"
           name={"country"}
           value={form.country}
@@ -101,13 +119,59 @@ const ApplicationFormPage = () => {
           <option value={""} disabled>País</option>
           <option>Brasil</option>
           <option>Espanha</option>
-        </select>
-        <BotaoCentro>
+          <option>França</option>
+          <option>México</option>
+          <option>Estados Unidos</option>
+          <option>Itália</option>
+          <option>Portugal</option>
+          <option>Holanda</option>
+          <option>Hungria</option>
+          <option>Suíça</option>
+          <option>Suecia</option>
+          <option>Croácia</option>
+          <option>Alemanha</option>
+          <option>Gana</option>
+          <option>Bolívia</option>
+          <option>Peru</option>
+          <option>Costa Rica</option>
+          <option>Paraguai</option>
+          <option>Bélgica</option>
+          <option>Reino Unido</option>
+          <option>Irlanda</option>
+          <option>Quênia</option>
+          <option>Egito</option>
+          <option>República Dominicana</option>
+          <option>Colombia</option>
+          <option>Árabia Saudita</option>
+          <option>Turquia</option>
+          <option>Austria</option>
+          <option>Noruega</option>
+          <option>Sérvia</option>
+          <option>Argentina</option>
+          <option>Uruguai</option>
+          <option>Canada</option>
+          <option>Chile</option>
+          <option>Venezuela</option>
+          <option>Equador</option>
+          <option>Índia</option>
+          <option>Indonésia</option>
+          <option>África do Sul</option>
+          <option>Senegal</option>
+          <option>Porto Rico</option>
+          <option>Emirados Árabes</option>
+          <option>Rússia</option>
+          <option>Hong Kong</option>
+          <option>Marrocos</option>
+          <option>China</option>
+          <option>Japão</option>
+          <option>Aústralia</option>
+          <option>Nova Zelândia</option>
+          <option>Córeia do Sul</option>
+          <option>Outro</option>
+        </Selecionar>
         <button type={"submit"}>Cadastrar</button>
-        <button onClick={() => goReturn(navigate)}>Voltar</button>
-        </BotaoCentro>
-      </CadastroEstilo>
-    </div>
+      </FormularioEstilo>
+    </CadastroEstilo>
   )
 }
 
