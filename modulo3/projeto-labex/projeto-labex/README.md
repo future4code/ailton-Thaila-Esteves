@@ -1,6 +1,7 @@
 # LabeX
 
-    Link do projeto: 
+    Link do projeto: kind-liquid.surge.sh
+    
 # App
 No App coloquei um styled-components GlobalStyle para definir algumas propriedas para o site em geral.
 Além disso, é do App que chamo o Router para definir as rotas de navegação do site.
