@@ -1,0 +1,22 @@
+{
+  "name": "aprofundamento-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node ./build/index.js",
+    "exerc1": "tsc && node ./build/exercicio-1.js",
+    "exerc2": "tsc && node ./build/exercicio-2.js",
+    "exerc3": "tsc && node ./build/exercicio-3.js",
+    "exerc4": "tsc && node ./build/exercicio-4.js",
+    "exerc5": "tsc && node ./build/exercicio-5.js",
+    "exerc6": "tsc && node ./build/exercicio-6.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.7.4"
+  }
+}
