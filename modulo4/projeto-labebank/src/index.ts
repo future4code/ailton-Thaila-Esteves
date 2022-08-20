@@ -13,15 +13,10 @@ app.post("/users/create", (request: Request, response: Response) => {
     try {
         const { nome, cpf, dataNasc } = request.body
 
-        if (!nome || !cpf || !dataNasc ) {
+        if (!nome && !cpf && !dataNasc ) {
             response.statusCode = 400
             throw new Error("Dados inválidos")
         }
-
-        if (nome || cpf || dataNasc !== "string") {
-            response.statusCode = 400
-            throw new Error("Os dados devem ser do tipo string")
-        } 
 
         const dataAtualTimestamp: number = new Date().getTime()
         const [diaNasc, mesNasc, anoNasc] = dataNasc.split("/")
@@ -97,23 +92,27 @@ app.get("/users/:cpf/balance", (request: Request, response: Response) => {
 
 app.put("/users/:cpf/:nome/deposit", (request: Request, response: Response) => {
     try {
-        const { valor } = request.body
+        const { valor, descricao, data } = request.body
         const { cpf, nome } = request.params
-
-        if (!cpf || !nome || !valor) {
+       
+        if (!cpf || !nome || !valor || !descricao || !data) {
             response.statusCode = 400
-            throw new Error("not possible to update, wrong data")
+            throw new Error("Dados inválidos")
         } 
         const userClient = users.findIndex(client => client.cpf === cpf && client.nome.toLowerCase() === nome.toLowerCase())
 
         if (userClient < 0) {
             response.statusCode = 404
-            throw new Error("not found")
+            throw new Error("Cliente não encontrado")
         } 
 
-       users[userClient].extrato.push(valor)
+       users[userClient].extrato.push({
+        valor,
+        data,
+        descricao
+       })
 
-        response.status(200).send('yes')
+        response.status(200).send(`O valor de R$${valor} foi adicionado ao seu saldo`)
     } catch (error: any) {
         response.status(400).send(error.message)
     }

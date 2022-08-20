@@ -53,5 +53,23 @@ export const users: Client[] = [
             descricao: 'gasto com bolos'
         }
     ]
+},
+{
+    nome: 'Nilia', 
+    cpf: '37878006588',
+    dataNasc: '06/03/2000', 
+    saldo: 7000, 
+    extrato: [ 
+        {
+            valor: 450,
+            data: '20/07/2000',
+            descricao: 'gasto com loja de luzes'
+        },
+        {
+            valor: 170,
+            data: '21/07/2000',
+            descricao: 'gasto com bolos de chocolate'
+        }
+    ]
 }
 ]
