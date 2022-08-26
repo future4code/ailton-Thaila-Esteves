@@ -21,12 +21,22 @@ const app: Express = express();
 app.use(express.json());
 app.use(cors());
 
+// RAW
+
 const getActorByName = async (name: string): Promise<any> => {
   const result = await connection.raw(`
     SELECT * FROM Actor WHERE name = '${name}'
   `)
 	return result
 };
+
+// QUERY BUILDERS
+
+const getActorByName2 = async (name: string): Promise<any> => {
+  const result = await connection("Actor")
+  .select("*")
+};
+
 
 const getActorsByGender = async (gender: string): Promise<any> => {
     const result = await connection.raw(`
@@ -36,12 +46,12 @@ const getActorsByGender = async (gender: string): Promise<any> => {
     return result;
 };
 
-
-app.get("/actors/:name", async (request, response) => {
+app.get("/actor/:id", async (request, response) => {
   try {
-    const name = request.params.name
+    const id = request.params.id
 
-    console.log(await getActorByName(name))
+    const actor = await connection.raw(`SELECT * FROM Actor WHERE id = ${id}`)
+    response.status(200).send(actor[0][0])
 
     response.end()
   } catch (error: any) {
@@ -50,6 +60,19 @@ app.get("/actors/:name", async (request, response) => {
   }
 }) 
 
+app.get("/actor?gender", async (request, response) => {
+  try {
+    const gender = request.query.gender
+
+    const actorsGender = await connection.raw(`SELECT COUNT(*) FROM Actor WHERE gender = "${gender}"`)
+    response.status(200).send(actorsGender[0])  
+
+    response.end()
+  } catch (error: any) {
+		console.log(error.message)
+    response.status(500).send("Unexpected error")
+  }
+}) 
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {
