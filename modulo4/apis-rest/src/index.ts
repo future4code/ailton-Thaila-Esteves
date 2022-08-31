@@ -1,6 +1,7 @@
 import { users, User, TYPES } from './data';
 import express, {Request, Response} from "express";
 import cors from "cors";
+import { Search } from '@mui/icons-material';
 
 const app = express();
 
@@ -9,19 +10,50 @@ app.use(cors());
 
 // 1
 
-// Retorna todos usuários
-
 // a 
 // Deve ser utilizado o método get
 
 // b
 // Indicaria com "/users"
 
+// Retorna todos usuários
+
 app.get("/users", (request: Request, response: Response) => {
     try {
-        response.status(200).send(users)
+      let type = request.query.type as string
+      let search = request.query.search as string
+
+      if (type) {
+        type = type.toUpperCase()
+
+        if (type in TYPES) {
+          const result = users.filter(user => user.type === type)
+          return response.status(200).send(result)
+        }
+
+        throw new Error("Tipo inválido")
+      } 
+    
+    if (search) {
+      search = search.toLowerCase()
+
+      const result = users.filter(
+        user => user.name.toLowerCase().includes(search)
+      )
+
+      console.log(result, search)
+
+      if (result.length === 0) {
+        return response.status(204).send("Usuário não encontrado")
+      }
+
+      return response.status(200).send(result)
+    }
+
+    response.status(200).send(users)
+
     } catch (error: any) {
-        response.status(response.statusCode || 500).send({ message: error.message });
+        response.status(400).send({ message: error.message });
     }
 })
 
@@ -86,9 +118,10 @@ app.get("/users", (request: Request, response: Response) => {
 
 app.post("/users", (request: Request, response: Response) => {
     try {
-      const {name, email, type, age} = request.body
+      const {name, email, age} = request.body
+      let type = request.body.type as string
   
-      if (!name || !email || !type || !age) {
+      if (!name || !email || !age || !type) {
         response.statusCode = 422
         throw new Error ("Devem ser adicionadas todas as informações para criar um novo usuário")
       }
@@ -108,10 +141,11 @@ app.post("/users", (request: Request, response: Response) => {
         throw new Error("A idade deve ser do tipo number")
       }
 
-    //   if(!(type in TYPES)) {
-    //     response.statusCode = 422
-    //     throw new Error("O tipo deve ser ADMIN ou NORMAL")
-    //   }
+    type = type.toUpperCase()
+      if(!(type in TYPES)) {
+        response.statusCode = 422
+        throw new Error("O tipo deve ser ADMIN ou NORMAL")
+      }
 
       users.forEach(user => {
         if (user.email === email) {
@@ -125,7 +159,9 @@ app.post("/users", (request: Request, response: Response) => {
         name,
         email,
         age,
-        type
+        type: type === TYPES.NORMAL
+          ? TYPES.NORMAL
+          : TYPES.ADMIN
       }
   
       users.push(user)
