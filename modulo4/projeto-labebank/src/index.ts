@@ -1,6 +1,6 @@
 import express, {Express, Request, Response} from 'express'
 import cors from 'cors'
-import { users } from './data'
+import { Client, users } from './data'
 
 const app: Express = express()
 
@@ -13,7 +13,7 @@ app.post("/users/create", (request: Request, response: Response) => {
     try {
         const { nome, cpf, dataNasc } = request.body
 
-        if (!nome && !cpf && !dataNasc ) {
+        if (!nome || !cpf || !dataNasc ) {
             response.statusCode = 400
             throw new Error("Dados inválidos")
         }
@@ -38,7 +38,8 @@ app.post("/users/create", (request: Request, response: Response) => {
             }
         })
 
-        const newUser = {
+        const newUser: Client = {
+            id: users.length + 1,
             nome,
             cpf,
             dataNasc,

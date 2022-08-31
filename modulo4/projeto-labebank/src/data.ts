@@ -10,6 +10,7 @@ export type Debitos = {
 }
 
 export type Client = {
+    id: number,
     nome: string,
     cpf: string,
     dataNasc: string, 
@@ -19,6 +20,7 @@ export type Client = {
 
 export const users: Client[] = [
 {
+    id: 1,
     nome: 'Jani', 
     cpf: '37878976543',
     dataNasc: '09/03/2000', 
@@ -37,6 +39,7 @@ export const users: Client[] = [
     ]
 },
 {
+    id: 2,
     nome: 'Aliani', 
     cpf: '37878976588',
     dataNasc: '07/03/2000', 
@@ -55,6 +58,7 @@ export const users: Client[] = [
     ]
 },
 {
+    id: 3,
     nome: 'Nilia', 
     cpf: '37878006588',
     dataNasc: '06/03/2000', 
