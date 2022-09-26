@@ -24,14 +24,14 @@
     private name: string;
     private age: number;
     private balance: number = 0;
-    private transactions: AllTransactions[] = [];
+    private transactions: Transaction[] = [];
   
     constructor(
        cpf: string,
        name: string,
        age: number,
        balance: number,
-       transactions: AllTransactions[]
+       transactions: Transaction[]
     ) {
        console.log("Chamando o construtor da classe UserAccount")
        this.cpf = cpf;
@@ -41,22 +41,23 @@
        this.transactions = transactions;
     }
   
-    getCpf() {
+    public getCpf() {
         this.cpf
     }
 
-    getName() {
+    public getName() {
         this.name
     }
-    getAge() {
+    
+    public getAge() {
         this.age
     }
 
-    getBalance() {
+    public getBalance() {
         this.balance
     }
 
-    getTransactions() {
+    public getTransactions() {
         this.transactions
     }
 
@@ -64,7 +65,7 @@
 
 // 2
 
-export class AllTransactions {
+class Transaction {
     private description: string;
     private value: number;
     private date: string;
@@ -88,11 +89,15 @@ export class AllTransactions {
     }
 }
 
-const transacao1 = new AllTransactions("conta de luz", 100, "2000-04-05")
-const transacao2 = new AllTransactions("delivery", 50, "2000-04-08")
+const transacao1 = new Transaction("conta de luz", 100, "2000-04-05")
+const transacao2 = new Transaction("delivery", 50, "2000-04-08")
 
-const user1 = new UserAccount("08977890280", "John", 18, 0, [transacao1, transacao2])
+const transacoes: Transaction[] = [transacao1, transacao2]
+
+const user1 = new UserAccount("08977890280", "John", 18, 0, transacoes)
 const user2 = new UserAccount("08977890210", "Geny", 19, 0, [transacao1, transacao2])
+
+const users:UserAccount[] = [user1, user2]
 
 class Bank {
     private accounts: UserAccount[];
@@ -101,11 +106,13 @@ class Bank {
       this.accounts = accounts;
     }
   
+    public getAccount() {
+        return this.accounts
+    }
 }
 
-const banco = new Bank([user1, user2])
+const bank1 = new Bank(users)
 
-console.log(banco)
 
 
 
